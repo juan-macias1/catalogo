@@ -4,14 +4,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Catálogo · Mi Laboratorio</title>
+<title>Catálogo · Tecnoconfisys</title>
 <style>
   /* LECCIÓN: el CSS va incrustado (no en un archivo aparte) porque el
      catálogo exportado debe ser UN solo archivo que funcione en cualquier
      lado, sin depender de static/style.css. */
   :root {
     --tinta: #1E2A33; --suave: #5A6570; --linea: #DCE3EA;
-    --verde: #0B5FA5; --fondo: #F4F6F8; --marino: #0A2540;
+    --verde: #0B5FA5; --fondo: #F4F6F8; --marino: #0A2540; --cyan: #17A2D6;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -64,6 +64,22 @@
   .precio-antes { font-size: 13px; color: var(--suave); text-decoration: line-through;
                   font-family: ui-monospace, Consolas, monospace; }
   .precio.oferta { color: #E8821C; }
+  /* Sobre pedido: cyan de marca, indica "se consigue" */
+  .seccion-nota { font-size: 13px; color: var(--suave); margin: -4px 0 14px; }
+  .equipo.sobre-pedido { border-color: var(--cyan, #17A2D6); }
+  .cinta-pedido { position: absolute; top: 12px; right: 12px; z-index: 2;
+                  background: #17A2D6; color: #fff; font-weight: 800;
+                  font-size: 11px; letter-spacing: .5px; padding: 5px 11px;
+                  border-radius: 20px; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+  .entrega { font-size: 12px; color: #0B5FA5; font-weight: 600; margin: 4px 0 0; }
+  /* Zona 3: invitación a pedir */
+  .pedido-cta { margin: 40px 0 10px; padding: 28px 24px; border-radius: 14px;
+                background: var(--marino); color: #fff; text-align: center; }
+  .pedido-cta h2 { margin: 0 0 10px; font-size: 20px; color: #fff; border: none; padding: 0; }
+  .pedido-cta p { margin: 0 auto 16px; max-width: 520px; font-size: 14px; color: #C9D6E3; }
+  .btn-pedido { display: inline-block; background: #25D366; color: #fff; font-weight: 700;
+                text-decoration: none; padding: 13px 26px; border-radius: 30px; font-size: 15px; }
+  .pedido-fino { font-size: 11px !important; color: #8FA5BC !important; margin-top: 16px !important; }
   footer { text-align: center; color: var(--suave); font-size: 12px; padding: 18px; }
   .vacio { text-align: center; padding: 60px 0; color: var(--suave); }
 </style>
@@ -71,10 +87,14 @@
 <body>
 
 <header>
-  <h1>Mi Laboratorio</h1>
-  <p>Equipos disponibles · 2026-07-22
-     
+  <h1>Tecnoconfisys</h1>
+  <p>Equipos disponibles · 2026-07-24
+      · Tienda Virtual
      · Funza, Cundinamarca</p>
+  
+  
+  <a class="contacto" href="https://wa.me/573142332704?text=Hola,%20me%20interesa%20un%20equipo%20del%20catálogo">
+    Escríbenos por WhatsApp</a>
   
 </header>
 
@@ -110,6 +130,7 @@
         </ul>
         
         <p class="descripcion">Usada en buen estado cuenta con 30 días de garantía, esta cubre daños por defectos del material o errores en la fabricación. NO cubre mala manipulación por parte del usuario.</p>
+        
         <div class="pie-tarjeta">
           <div class="precio-bloque">
             
@@ -148,6 +169,7 @@
         </ul>
         
         <p class="descripcion">Usada en buen estado cuenta con 30 días de garantía, esta cubre daños por defectos del material o errores en la fabricación. NO cubre mala manipulación por parte del usuario.</p>
+        
         <div class="pie-tarjeta">
           <div class="precio-bloque">
             
@@ -191,6 +213,7 @@
         </ul>
         
         <p class="descripcion">Disco nuevo, cuenta con 30 días de garantía, esta cubre daños por defectos del material o errores en la fabricación. NO cubre mala manipulación por parte del usuario.</p>
+        
         <div class="pie-tarjeta">
           <div class="precio-bloque">
             
@@ -229,6 +252,7 @@
         </ul>
         
         <p class="descripcion">Disco nuevo, cuenta con 30 días de garantía, esta cubre daños por defectos del material o errores en la fabricación. NO cubre mala manipulación por parte del usuario.</p>
+        
         <div class="pie-tarjeta">
           <div class="precio-bloque">
             
@@ -267,6 +291,7 @@
         </ul>
         
         <p class="descripcion">Equipo usado funcional, presenta algunos detalles de uso mínimos, la duración de la batería es de aproximadamente 2h.</p>
+        
         <div class="pie-tarjeta">
           <div class="precio-bloque">
             
@@ -305,6 +330,7 @@
         </ul>
         
         <p class="descripcion">Equipo usado en buen estado bien cuidado, no tiene tallado el display, su batería dura aproximadamente 5h.</p>
+        
         <div class="pie-tarjeta">
           <div class="precio-bloque">
             
@@ -323,12 +349,28 @@
   
 
   
+
+  
+
+  
+  
+  <section class="pedido-cta">
+    <h2>¿Buscas algo especial?</h2>
+    <p>Cuéntanos qué necesitas y te lo conseguimos a tu medida —para trabajo,
+       estudio, diseño o gaming—. Dinos marca, uso y presupuesto, y te armamos
+       la mejor opción con garantía.</p>
+    <a class="btn-pedido" href="https://wa.me/573142332704?text=Hola%2C%20busco%20un%20equipo%20a%20la%20medida%3A%0A%0A%E2%80%A2%20Lo%20quiero%20para%3A%20%0A%E2%80%A2%20Marca%20preferida%3A%20%0A%E2%80%A2%20Presupuesto%3A%20">
+      💬 Cuéntame qué buscas
+    </a>
+    <p class="pedido-fino">Los productos sobre pedido se consiguen específicamente para ti. El tiempo de entrega es estimado y puede variar según disponibilidad del proveedor. Incluyen la misma garantía que nuestros equipos.</p>
+  </section>
+  
 </main>
 
 <footer>
-  Mi Laboratorio · Funza, Cundinamarca
+  Tecnoconfisys · Funza, Cundinamarca
+   · 3142332704
   
-  — Todos los equipos incluyen garantía de 30 días.
 </footer>
 
 
